@@ -1,9 +1,9 @@
-// Function to create project card
-const projectCards = projects.forEach((project) => {});
+// Function to create project cards
+// const projectCards = projects.map((project) => {
+//   return card;
+// });
 
-// Function to load the project cards to the page
-
-// Projects object
+// List of projects
 const projects = [
   {
     name: "EcoTracker",
@@ -54,3 +54,34 @@ const projects = [
     link: "https://questboard.example.com",
   },
 ];
+
+// Function to load the project cards to the page
+const container = document.querySelector(".projects-container");
+projects.forEach((project) => {
+  const card = document.createElement("div");
+  card.classList.add("project-card");
+
+  card.innerHTML = `
+    <img class="project-image" src="./assets/projects/${project.image}" alt="" />
+    <div class="project-info">
+      <div class="project-header">
+        <h3>${project.name}</h3>
+        <div class="project-links">
+          <a href="${project.github}" class="github-link">
+            <i class="devicon-github-original project-icon github-icon"></i>
+          </a>
+          <a href="${project.link}" class="external-link">
+            <img
+              src="./assets/external-link.svg"
+              alt=""
+              class="project-icon external-icon"
+            />
+          </a>
+        </div>
+      </div>
+      <p class="project-description">${project.description}</p>
+    </div>
+  `;
+
+  container.appendChild(card);
+});

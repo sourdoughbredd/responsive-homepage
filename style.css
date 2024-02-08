@@ -16,12 +16,19 @@ body {
   max-width: 1400px;
 }
 
+@media (max-width: 679px) {
+  h2 {
+    text-align: center;
+  }
+}
+
 header {
   border: 4px dashed black;
 }
 
 main {
   border: 4px dashed red;
+  box-sizing: border-box;
 }
 
 main h2 {

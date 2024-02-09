@@ -30,14 +30,7 @@ h2 {
   margin: 0.7rem 0;
 }
 
-@media (max-width: 719px) {
-  h2 {
-    text-align: center;
-  }
-}
-
 header {
-  /* border: 4px dashed black; */
   min-height: 440px;
   background-image: linear-gradient(
     -15deg,
@@ -47,31 +40,42 @@ header {
 }
 
 .header-content {
-  /* This is an invisibel border. For some reason, it fixes image alignment! */
-  border: 0px solid rgb(0, 0, 0, 0);
+  /* This is an invisible border. For some reason, it fixes image alignment! */
+  /* border: 0px solid rgb(0, 0, 0, 0); */
+  position: relative;
   padding-top: 36px;
-  /* display: flex; */
 }
 
 .header-content .headshot {
   float: left;
   height: 40vw;
   max-height: 400px;
+  min-height: 280px;
   margin-right: 1.5rem;
   margin-bottom: 0.7rem;
   border-radius: 10px;
   box-shadow: 2px 6px 6px hsl(0deg 0% 0% / 0.3);
 }
 
+.header-content h1 {
+  position: absolute;
+  /* z-index: 2; */
+  top: min(40vw - 1rem - 12px, 400px - 1rem - 12px);
+  left: 1.5vw;
+  font-size: 3.5rem;
+  /* font-size: clamp(3rem, 8vw, 3.5rem); */
+  color: rgb(237, 237, 237);
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
+    0px 18px 23px rgba(0, 0, 0, 0.1);
+}
+
 .about-me-container {
-  /* border: 3px dashed cyan; */
   box-shadow: 2px 6px 6px hsl(0deg 0% 0% / 0.3);
-  background-color: white;
+  background-color: rgb(245, 245, 245);
   border-radius: 12px;
-  margin-left: 1rem;
-  margin: 4% 0 0 1.3rem;
   padding: 2rem 1.5rem;
-  height: 80%;
+  margin-top: min(calc(116px - 6%), 80px);
+  margin-left: 1.5rem;
 }
 
 .about-me-container p {
@@ -148,5 +152,71 @@ main {
 }
 
 footer {
-  /* border: 4px dashed green; */
+  border: 4px dashed green;
+}
+
+/*  Tablet */
+@media (max-width: 800px) {
+  .header-content h1 {
+    text-align: right;
+    top: 3rem;
+    right: 0;
+  }
+
+  .header-content h2 {
+    text-align: center;
+  }
+}
+
+/* When projects grid only has 1 column */
+@media (max-width: 719px) {
+  main h2 {
+    text-align: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  .header-content,
+  .main-content,
+  .footer-content {
+    margin: 0 24px;
+  }
+
+  .header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-content .headshot {
+    float: none;
+    margin: 0;
+    /* margin-bottom: 24px; */
+    width: 100%;
+    height: auto;
+    min-height: initial;
+    max-height: initial;
+  }
+
+  .header-content h1 {
+    position: relative;
+    top: -1.1em;
+    left: 0;
+    align-self: flex-start;
+    text-align: left;
+    padding: 0 1rem;
+  }
+
+  .header-content h1.wrapped {
+    transform: translateY(-50%);
+  }
+
+  .about-me-container {
+    margin: -2rem 0 0 0;
+  }
+
+  .about-me-container.wrapped {
+    margin-top: -5.5rem;
+  }
 }

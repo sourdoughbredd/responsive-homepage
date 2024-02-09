@@ -83,3 +83,24 @@ projects.forEach((project) => {
 
   container.appendChild(card);
 });
+
+// Wrapping text of h1 name
+function checkNameWrap(e) {
+  const name = document.querySelector(".header-content h1");
+  const aboutMe = document.querySelector(".about-me-container");
+  if (name) {
+    const lineHeight = parseInt(window.getComputedStyle(name).lineHeight, 10);
+    const actualHeight = name.offsetHeight;
+
+    if (actualHeight > lineHeight) {
+      name.classList.add("wrapped");
+      aboutMe.classList.add("wrapped");
+    } else {
+      name.classList.remove("wrapped"); // Remove the class if text is not wrapped
+      aboutMe.classList.remove("wrapped");
+    }
+  }
+}
+
+document.addEventListener("DOMContentLoaded", checkNameWrap);
+window.addEventListener("resize", checkNameWrap);

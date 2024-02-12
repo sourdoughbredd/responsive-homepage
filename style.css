@@ -234,12 +234,16 @@ footer :not(h2) {
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    padding: 1rem 0;
+    padding: 2rem 0;
+  }
+
+  .footer-content .contact-container {
+    padding-right: 0;
   }
 
   .footer-content .footer-headshot {
     width: 100%;
-    height: 400px;
+    min-height: 450px;
   }
 
   .footer-content .links {

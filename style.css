@@ -26,12 +26,12 @@ body {
 }
 
 h2 {
-  font-size: 1.7rem;
+  font-size: 2rem;
   margin: 0.7rem 0;
 }
 
 header {
-  min-height: 440px;
+  min-height: 480px;
   background-image: linear-gradient(
     -15deg,
     rgb(255, 255, 255, 0) 50%,
@@ -40,8 +40,6 @@ header {
 }
 
 .header-content {
-  /* This is an invisible border. For some reason, it fixes image alignment! */
-  /* border: 0px solid rgb(0, 0, 0, 0); */
   position: relative;
   padding-top: 36px;
 }
@@ -59,11 +57,9 @@ header {
 
 .header-content h1 {
   position: absolute;
-  /* z-index: 2; */
   top: min(40vw - 1rem - 12px, 400px - 1rem - 12px);
   left: 1.5vw;
   font-size: 3.5rem;
-  /* font-size: clamp(3rem, 8vw, 3.5rem); */
   color: rgb(237, 237, 237);
   text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
     0px 18px 23px rgba(0, 0, 0, 0.1);
@@ -96,7 +92,6 @@ header {
 }
 
 main {
-  /* border: 4px dashed red; */
   box-sizing: border-box;
   margin: 24px 0;
 }
@@ -109,7 +104,6 @@ main {
 }
 
 .project-card {
-  /* border: 2px solid rgb(219, 219, 219); */
   border-radius: 18px;
   overflow: hidden;
   box-shadow: 2px 6px 6px hsl(0deg 0% 0% / 0.3);
@@ -152,8 +146,70 @@ main {
 }
 
 footer {
-  border: 4px dashed green;
+  background-color: rgb(5, 152, 201);
+  color: rgb(248, 247, 247);
 }
+
+footer h2 {
+  margin: 0;
+}
+
+footer :not(h2) {
+  font-size: 1.5rem;
+}
+
+.footer-content {
+  border: 4px dashed green;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0;
+  font-size: 1.2rem;
+}
+
+.footer-content .contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  padding-right: 12px;
+}
+
+.footer-content .contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-content .contacts > * {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-content img.phone,
+.footer-content img.email {
+  height: 1em;
+  filter: invert(0.95);
+}
+
+.footer-content .contact-container .links {
+  display: flex;
+  gap: 18px;
+}
+
+.footer-content .contact-container .links img {
+  filter: invert(0.95);
+  width: 40px;
+}
+
+.footer-content .footer-headshot {
+  /* flex: 1; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right;
+}
+
+/* MEDIA QUERIES */
 
 /*  Tablet */
 @media (max-width: 800px) {
@@ -170,8 +226,25 @@ footer {
 
 /* When projects grid only has 1 column */
 @media (max-width: 719px) {
-  main h2 {
+  main h2,
+  footer h2 {
     text-align: center;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 1rem 0;
+  }
+
+  .footer-content .footer-headshot {
+    width: 100%;
+    height: 400px;
+  }
+
+  .footer-content .links {
+    justify-content: center;
   }
 }
 
@@ -192,7 +265,6 @@ footer {
   .header-content .headshot {
     float: none;
     margin: 0;
-    /* margin-bottom: 24px; */
     width: 100%;
     height: auto;
     min-height: initial;

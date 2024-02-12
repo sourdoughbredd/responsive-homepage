@@ -159,7 +159,6 @@ footer :not(h2) {
 }
 
 .footer-content {
-  border: 4px dashed green;
   display: flex;
   justify-content: space-between;
   padding: 2rem 0;

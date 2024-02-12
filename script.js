@@ -7,6 +7,8 @@ const projects = [
       "EcoTracker is a web application designed to help individuals track their carbon footprint and learn ways to live more sustainably. It provides personalized tips, tracks progress over time, and encourages users through challenges and achievements.",
     github: "https://github.com/user/EcoTracker",
     link: "https://ecotracker.example.com",
+    image_alt:
+      "Screenshot of the EcoTracker web application interface showing a dashboard with carbon footprint tracking features, including graphs, a progress tracker, and sustainable living tips.",
   },
   {
     name: "CodeSnipHub",
@@ -15,6 +17,8 @@ const projects = [
       "CodeSnipHub is an online repository where developers can share and discover code snippets in various programming languages. It features a tagging system, user ratings, and integration with popular IDEs to facilitate easy code reuse.",
     github: "https://github.com/user/CodeSnipHub",
     link: "https://codesniphub.example.com",
+    image_alt:
+      "Screenshot of the CodeSnipHub web interface, featuring a repository of code snippets with a search bar, snippet previews, user ratings, and a tagging system.",
   },
   {
     name: "HealthBeat",
@@ -23,6 +27,8 @@ const projects = [
       "HealthBeat is a mobile app that tracks physical activity, heart rate, and sleep patterns. It offers insights and recommendations to improve users' health based on data collected from wearable devices.",
     github: "https://github.com/user/HealthBeat",
     link: "https://healthbeat.example.com",
+    image_alt:
+      "Screenshot of the HealthBeat mobile app interface, displaying health tracking features such as activity, heart rate, and sleep patterns with vibrant charts and summaries.",
   },
   {
     name: "MarketMaven",
@@ -31,6 +37,8 @@ const projects = [
       "MarketMaven is an AI-powered tool that analyzes market trends and predicts stock performance. It's designed for both novice and experienced investors, offering detailed reports, risk assessments, and investment suggestions.",
     github: "https://github.com/user/MarketMaven",
     link: "https://marketmaven.example.com",
+    image_alt:
+      "Screenshot of the MarketMaven tool interface, showing AI-powered market analysis with real-time stock performance graphs, predictive analytics, and investment suggestions.",
   },
   {
     name: "ArtistryHub",
@@ -39,6 +47,8 @@ const projects = [
       "ArtistryHub is a platform for digital artists to showcase their work, receive feedback, and connect with potential clients. It features artist portfolios, a commission system, and community-driven events.",
     github: "https://github.com/user/ArtistryHub",
     link: "https://artistryhub.example.com",
+    image_alt:
+      "Screenshot of the ArtistryHub digital art platform interface, showcasing artist portfolios with features for browsing artwork, artist profiles, and commissioning art.",
   },
   {
     name: "QuestBoard",
@@ -47,6 +57,8 @@ const projects = [
       "QuestBoard is a gamified task management app that turns daily chores and tasks into quests. Users can earn rewards, level up, and compete with friends to make productivity more enjoyable.",
     github: "https://github.com/user/QuestBoard",
     link: "https://questboard.example.com",
+    image_alt:
+      "Screenshot of the QuestBoard gamified task management app interface, themed around fantasy quests with features like treasure chests for rewards and a leaderboard.",
   },
 ];
 
@@ -66,13 +78,14 @@ projects.forEach((project) => {
             <img
               class="devicon-github-original project-icon github-icon"
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+              alt="Github logo"
             />
           </a>
           <a href="${project.link}" class="external-link">
             <img
-              src="./assets/external-link.svg"
-              alt=""
               class="project-icon external-icon"
+              src="./assets/external-link.svg"
+              alt=${project.image_alt}
             />
           </a>
         </div>

@@ -26,10 +26,12 @@ This is a responsive homepage designed to showcase a portfolio. It includes a he
 
 ### Narrow View
 
-<div style="display: flex; gap: 40px;">
-    <img src="./screenshots/narrow1.png" alt="Screenshot of the Responsive Homepage" style="max-height: 400px;">
-    <img src="./screenshots/narrow2.png" alt="Screenshot of the Responsive Homepage" style="max-height: 400px;">
-</div>
+<table>
+  <tr>
+    <td><img src="./screenshots/narrow1.png" alt="Screenshot of the Responsive Homepage" style="max-height: 400px;"></td>
+    <td><img src="./screenshots/narrow2.png" alt="Screenshot of the Responsive Homepage" style="max-height: 400px;"></td>
+  </tr>
+</table>
 
 ## Preview
 
